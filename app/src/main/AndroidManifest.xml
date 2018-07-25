@@ -26,7 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.RxRetrofitActivity" />
-        <activity android:name=".activity.RetrofitUploadActivity"></activity>
+        <activity android:name=".activity.RetrofitUploadActivity" />
+        <activity android:name=".activity.FireBaseFullCRUDActivity"></activity>
     </application>
 
 </manifest>
