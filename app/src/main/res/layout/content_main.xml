@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5c5656"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/button_okhttp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OKHttp"
+            android:fontFamily="@font/mine_craft_pe"
+            android:textColor="@drawable/selector_normal_text"
+            android:background="@drawable/shape_item_button"
+            style="@style/BigButtonStyle"/>
+        <Button
+            android:id="@+id/button_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Retrofit"
+            android:textColor="@drawable/selector_normal_text"
+            android:fontFamily="@font/android_robot"
+            android:background="@drawable/shape_item_button"
+            style="@style/BigButtonStyle"/>
+        <Button
+            android:id="@+id/button_rx_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Rx + Retrofit"
+            android:background="@drawable/shape_item_button"
+            android:textColor="@drawable/selector_normal_text"
+            style="@style/BigButtonStyle"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.ksn_dev.syncserverworkshop.activity.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_rx_retrofit"
+        android:title="Rx + Retrofit"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_okhttp"
+        android:title="OKHttp"
+        app:showAsAction="never" />
+</menu>
