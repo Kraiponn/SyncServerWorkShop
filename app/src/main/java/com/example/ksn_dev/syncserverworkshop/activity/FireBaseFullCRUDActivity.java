@@ -10,6 +10,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.ksn_dev.syncserverworkshop.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class FireBaseFullCRUDActivity extends AppCompatActivity {
     private Spinner spnnProductType;
@@ -19,6 +24,8 @@ public class FireBaseFullCRUDActivity extends AppCompatActivity {
             "Mobile", "Web", "Embedded",
             "Graphic", "Circuit", "IOT"
     };
+
+    private DatabaseReference mProductReff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +41,42 @@ public class FireBaseFullCRUDActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.button_Add);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                this, R.layout.spinner_item_product
+                this, R.layout.spinner_item_product, PRODUCT_TYPE
         );
 
-        /*spnnProductType.setAdapter(adapter);
-        spnnProductType.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spnnProductType.setAdapter(adapter);
+        spnnProductType.setOnItemSelectedListener(spinnerItemSelect);
+        spnnProductType.setSelection(0);
+
+        mProductReff = FirebaseDatabase.getInstance().getReference("products");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mProductReff.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
                 //
             }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
         });
-        spnnProductType.setSelection(0);*/
     }
+
+    AdapterView.OnItemSelectedListener spinnerItemSelect = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    };
+
 }
